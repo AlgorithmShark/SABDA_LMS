@@ -1,8 +1,4 @@
-# SABDA LMS - REST API Learning Management System
-
-Tugas Akhir Learning Labs: Backend Development.
-
-REST API sederhana untuk sistem manajemen pembelajaran (Learning Management System), dibangun dengan Flask dan database PostgreSQL di Supabase, serta di-deploy ke Vercel.
+# SABDA LMS
 
 **Daftar isi**
 
@@ -30,7 +26,7 @@ Registrasi publik selalu membuat akun `student`. Role `instructor` dan `admin` h
 | Database | Supabase (PostgreSQL) |
 | Autentikasi | JWT (PyJWT) dan hash password scrypt (Werkzeug) |
 | Deployment | Vercel (Python serverless function) |
-| Frontend | Opsional, berupa HTML/CSS/JavaScript murni yang disajikan Flask |
+| Frontend | HTML/CSS/JavaScript |
 
 ---
 
@@ -79,14 +75,10 @@ erDiagram
 
 | Keterangan | URL |
 |------------|-----|
-| Aplikasi dan API (Vercel) | `https://nama-project.vercel.app` |
-| Base URL API | `https://nama-project.vercel.app/api` |
-| Cek status server dan database | `https://nama-project.vercel.app/api/health` |
-| Repository GitHub | `https://github.com/username/nama-repo` |
-
-> Ganti `nama-project` dan `username/nama-repo` dengan URL deployment dan repository milik Anda. Semua contoh URL pada dokumentasi di bawah memakai `https://nama-project.vercel.app`.
-
-Konfigurasi deployment ada di [`vercel.json`](vercel.json) dan [`api/index.py`](api/index.py). Semua kredensial (URL dan key Supabase, secret JWT) disimpan di **Environment Variables** pada dashboard Vercel, bukan di dalam kode. Daftar variabelnya ada di [bagian 5.3](#53-isi-environment-variables).
+| Aplikasi dan API (Vercel) | `https://sabda-eta.vercel.app/` |
+| Base URL API | `https://sabda-eta.vercel.app/api` |
+| Cek status server dan database | `https://sabda-eta.vercel.app/api/health` |
+| Repository GitHub | `https://github.com/AlgorithmShark/SABDA_LMS` |
 
 ---
 
