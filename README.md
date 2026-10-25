@@ -38,19 +38,6 @@ Database memiliki **6 tabel** yang saling terhubung lewat foreign key. File sumb
 
 ![ERD SABDA LMS](docs/Image.png)
 
-Diagram yang sama dalam bentuk teks (otomatis tampil di GitHub):
-
-```mermaid
-erDiagram
-    users ||--o{ courses : "mengajar (instructor_id)"
-    categories ||--o{ courses : "mengelompokkan (category_id)"
-    courses ||--o{ lessons : "memiliki (course_id)"
-    users ||--o{ enrollments : "mendaftar (user_id)"
-    courses ||--o{ enrollments : "diikuti (course_id)"
-    users ||--o{ lesson_progress : "menyelesaikan (user_id)"
-    lessons ||--o{ lesson_progress : "diselesaikan (lesson_id)"
-```
-
 ### 2.2 Daftar tabel dan relasi
 
 | Tabel | Primary Key | Foreign Key | Relasi |
