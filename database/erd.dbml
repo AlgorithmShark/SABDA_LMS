@@ -1,0 +1,49 @@
+https://dbdiagram.io/
+
+Table users {
+  id bigint [pk, increment]
+  name text [not null]
+  email text [not null, unique]
+  password_hash text [not null]
+  role text [not null, default: 'student', note: 'admin | instructor | student']
+  created_at timestamptz [not null]
+}
+Table categories {
+  id bigint [pk, increment]
+  name text [not null, unique]
+  description text
+}
+Table courses {
+  id bigint [pk, increment]
+  title text [not null]
+  description text
+  category_id bigint [not null, ref: > categories.id]
+  instructor_id bigint [not null, ref: > users.id]
+  level text [not null, default: 'beginner']
+  is_published boolean [not null, default: false]
+  created_at timestamptz
+  updated_at timestamptz
+}
+Table lessons {
+  id bigint [pk, increment]
+  course_id bigint [not null, ref: > courses.id]
+  title text [not null]
+  content text
+  video_url text
+  position int [not null]
+  created_at timestamptz
+}
+Table enrollments {
+  id bigint [pk, increment]
+  user_id bigint [not null, ref: > users.id]
+  course_id bigint [not null, ref: > courses.id]
+  enrolled_at timestamptz
+  indexes { (user_id, course_id) [unique] }
+}
+Table lesson_progress {
+  id bigint [pk, increment]
+  user_id bigint [not null, ref: > users.id]
+  lesson_id bigint [not null, ref: > lessons.id]
+  completed_at timestamptz
+  indexes { (user_id, lesson_id) [unique] }
+}
